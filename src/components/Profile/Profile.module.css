@@ -1,0 +1,58 @@
+.userCard {
+    padding-top: 8px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.userCardImage {
+    overflow: hidden;
+    width: 150px;
+    border-radius: 50%;
+    background-color: rgb(37, 37, 37);
+    margin: 0 auto;
+    margin-bottom: 18px;
+}
+
+.userCardTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 18px;
+}
+
+.userCardSubTitle {
+    color: grey;
+    margin-bottom: 14px;
+}
+
+.userCardList {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userCardItem {
+    background-color: rgb(204, 204, 204);
+    width: 100px;
+    outline: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.userCardItemLabel {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.userCardItemValue {
+    font-size: 20px;
+    font-weight: 600;
+}
