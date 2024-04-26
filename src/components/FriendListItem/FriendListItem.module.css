@@ -1,0 +1,34 @@
+.thumb {
+    height: 200px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #000;
+    border-radius: 15px;
+}
+
+.img {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.sub_title {
+    font-size: 24px;
+}
+
+.sub_title.is_online {
+    color: green;
+}
+
+.sub_title.is_offline {
+    color: red
+}
