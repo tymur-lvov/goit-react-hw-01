@@ -1,0 +1,24 @@
+.table {
+    text-align: center;
+    height: 300px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.table_head {
+    vertical-align: middle;
+    height: 30px;
+    color: white;
+    background-color: rgb(31, 31, 31);
+    border: 1px solid #000;
+}
+
+.table_row:nth-child(even) {
+    background-color: rgb(216, 216, 216);
+}
+
+.table_data {
+    vertical-align: middle;
+    border: 1px solid #000;
+}
