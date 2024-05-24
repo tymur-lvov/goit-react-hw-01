@@ -1,6 +1,6 @@
 Завдання 1 - Профіль соціальної мережі
 
-Необхідно створити компонент Profile, за допомогою якого ми могли б відображати інформацію про користувача соціальної мережі.
+Необхідно створити компонент <Profile>, за допомогою якого ми могли б відображати інформацію про користувача соціальної мережі.
 
 
 
@@ -19,34 +19,34 @@ stats — об'єкт з інформацією про активності
 Компонент повинен створювати розмітку наступної структури, але з динамічними даними, що надходять у вигляді описаних раніше пропсів.
 
 
-
-div
-  div
-    img
+```
+<div>
+  <div>
+    <img
       src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
       alt="User avatar"
-    /
-    pPetra Marica/p
-    p@pmarica/p
-    pSalvador, Brasil/p
-  /div
+    />
+    <p>Petra Marica</p>
+    <p>@pmarica</p>
+    <p>Salvador, Brasil</p>
+  </div>
 
-  ul
-    li
-      spanFollowers/span
-      span1000/span
-    /li
-    li
-      spanViews/span
-      span2000/span
-    /li
-    li
-      spanLikes/span
-      span3000/span
-    /li
-  /ul
-/div
-
+  <ul>
+    <li>
+      <span>Followers</span>
+      <span>1000</span>
+    </li>
+    <li>
+      <span>Views</span>
+      <span>2000</span>
+    </li>
+    <li>
+      <span>Likes</span>
+      <span>3000</span>
+    </li>
+  </ul>
+</div>
+```
 
 
 Приведений нижче є приклад використання компонента Profile у компоненті App:
@@ -56,7 +56,7 @@ div
 
 
 Використовуйте ці дані користувача у своїй роботі для значень пропсів.
-
+```
 const userData = {
   username: "Jacques Gluke",
   tag: "jgluke",
@@ -70,81 +70,81 @@ const userData = {
 };
 
 
-const App = () = {
+const App = () => {
   return (
-    
-      Profile
+    <>
+      <Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      /
-    /
+      />
+    </>
   );
 };
-
+```
 
 
 Треба винести дані користувача в JSON-файл, щоб не завантажувати компонент App. Наприклад, створіть у папці src файл userData.json, перенесіть туди дані користувача, відформатуйте їх у формат JSON, а потім імпортуйте його в App, щоб передати ці дані через пропси.
 
 
-
+```
 import userData from "../userData.json";
 
-const App = () = {
+const App = () => {
   return (
-    
-      Profile
+    <>
+      <Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      /
-    /
+      />
+    </>
   );
 };
-
+```
 
 
 Завдання 2 - Список друзів
 
-Необхідно створити компонент FriendList, за допомогою якого ми могли б відображати інформацію про друзів користувача.
+Необхідно створити компонент <FriendList>, за допомогою якого ми могли б відображати інформацію про друзів користувача.
 
 
 
 
 
 
-Компонент FriendList повинен приймати один проп friends - масив об'єктів друзів та створювати DOM розмітку наступної структури.
+Компонент <FriendList> повинен приймати один проп friends - масив об'єктів друзів та створювати DOM розмітку наступної структури.
 
 
-
-ul
+```
+<ul>
 	{/* Кількість li залежить від кількості об'єктів в масиві */}
-	li
-		FriendListItem /
-	/li
-/ul
+	<li>
+		<FriendListItem />
+	</li>
+</ul>
+```
 
 
-
-Компонент FriendListItem - це картка одного друга, яка повинна приймати кілька пропсів:
+Компонент <FriendListItem> - це картка одного друга, яка повинна приймати кілька пропсів:
 
 avatar - посилання на аватар
 name - ім'я друга
 isOnline - буль, що сигналізує про стан друга: в мережі або ні.
-Компонент FriendListItem повинен створювати DOM розмітку наступної структури.
+Компонент <FriendListItem> повинен створювати DOM розмітку наступної структури.
 
 
-
-div
-  img src="" alt="Avatar" width="48" /
-  pFriend name/p
-  pFriend status/p
-/div
-
+```
+<div>
+  <img src="" alt="Avatar" width="48" />
+  <p>Friend name</p>
+  <p>Friend status</p>
+</div>
+```
 
 
 Залежно від пропа isOnline, текст в p.status повинен змінюватися, а його колір тексту - також. Якщо значення true, то текст Online і колір тексту зелений, в іншому випадку текст Offline і червоний колір тексту. Це можна зробити за допомогою різних CSS-класів.
@@ -152,7 +152,7 @@ div
 Приклад використання компонента FriendList в компоненті App. Дані про друзі це масив об'єктів із відомими властивостями. Використовуй ці дані в своїй роботі для значень пропсів.
 
 
-
+```
 const friends = [
   {
     avatar: "https://cdn-icons-png.flaticon.com/512/1998/1998592.png",
@@ -186,38 +186,38 @@ const friends = [
   }
 ];
 
-const App = () = {
+const App = () => {
   return (
-    
-      FriendList friends={friends} /
-    /
+    <>
+      <FriendList friends={friends} />
+    </>
   );
 };
-
+```
 
 
 Треба винести дані про друзів в JSON-файл, щоб не ускладнювати компонент App. Наприклад, створіть у папці src файл friends.json, перемістіть туди масив друзів, форматуючи дані під формат JSON, і потім імпортуйте його в App, щоб передати ці дані пропсами.
 
 
-
+```
 import userData from "../userData.json";
 import friends from "../friends.json";
 
-const App = () = {
+const App = () => {
   return (
-    
-      Profile
+    <>
+      <Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      /
-      FriendList friends={friends} /
-    /
+      />
+      <FriendList friends={friends} />
+    </>
   );
 };
-
+```
 
 
 Завдання 3 - Історія транзакцій
@@ -235,39 +235,39 @@ id — унікальний ідентифікатор транзакції
 type — тип транзакції
 amount - сума транзакції
 currency - тип валюти
-Необхідно створити компонент TransactionHistory, який приймає один проп items - масив об'єктів транзакцій. Компонент створює розмітку таблиці. Кожна транзакція - це рядок таблиці. У прикладі наведена розмітка двох транзакцій.
+Необхідно створити компонент <TransactionHistory>, який приймає один проп items - масив об'єктів транзакцій. Компонент створює розмітку таблиці. Кожна транзакція - це рядок таблиці. У прикладі наведена розмітка двох транзакцій.
 
 
+```
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Amount</th>
+      <th>Currency</th>
+    </tr>
+  </thead>
 
-table
-  thead
-    tr
-      thType/th
-      thAmount/th
-      thCurrency/th
-    /tr
-  /thead
-
-  tbody
-    tr
-      tdInvoice/td
-      td125/td
-      tdUSD/td
-    /tr
-    tr
-      tdWithdrawal/td
-      td85/td
-      tdUSD/td
-    /tr
-  /tbody
-/table
-
+  <tbody>
+    <tr>
+      <td>Invoice</td>
+      <td>125</td>
+      <td>USD</td>
+    </tr>
+    <tr>
+      <td>Withdrawal</td>
+      <td>85</td>
+      <td>USD</td>
+    </tr>
+  </tbody>
+</table>
+```
 
 
 Приклад використання компонента TransactionHistory у компоненті App. Використовуйте ці дані у своїй роботі для значень пропсів.
 
 
-
+```
 const transactions = [
   {
     id: "1e0700a2-5183-4291-85cc-2065a036a683",
@@ -325,37 +325,38 @@ const transactions = [
   }
 ];
 
-const App = () = {
+const App = () => {
   return (
-    
-      TransactionHistory items={transactions} /
-    /
+    <>
+      <TransactionHistory items={transactions} />
+    </>
   );
 };
-
+```
 
 
 Треба винести дані про транзакції у JSON-файл, щоб не захламлювати компонент App. Наприклад, створіть файл із назвою transactions.json у папці src, перемістіть туди масив транзакцій, відформатуйте дані у формат JSON, а потім імпортуйте його в компонент App, щоб передати ці дані як пропси.
 
 
-
+```
 import userData from "../userData.json";
 import friends from "../friends.json";
 import transactions from "../transactions.json";
 
 
-const App = () = {
+const App = () => {
   return (
-    
-      Profile
+    <>
+      <Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      /
-      FriendList friends={friends} /
-      TransactionHistory items={transactions} /
-    /
+      />
+      <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
+    </>
   );
 };
+```
