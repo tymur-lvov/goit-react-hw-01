@@ -1,6 +1,6 @@
 Завдання 1 - Профіль соціальної мережі
 
-Необхідно створити компонент <Profile>, за допомогою якого ми могли б відображати інформацію про користувача соціальної мережі.
+Необхідно створити компонент Profile, за допомогою якого ми могли б відображати інформацію про користувача соціальної мережі.
 
 
 
@@ -20,32 +20,32 @@ stats — об'єкт з інформацією про активності
 
 
 
-<div>
-  <div>
-    <img
+div
+  div
+    img
       src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
       alt="User avatar"
-    />
-    <p>Petra Marica</p>
-    <p>@pmarica</p>
-    <p>Salvador, Brasil</p>
-  </div>
+    /
+    pPetra Marica/p
+    p@pmarica/p
+    pSalvador, Brasil/p
+  /div
 
-  <ul>
-    <li>
-      <span>Followers</span>
-      <span>1000</span>
-    </li>
-    <li>
-      <span>Views</span>
-      <span>2000</span>
-    </li>
-    <li>
-      <span>Likes</span>
-      <span>3000</span>
-    </li>
-  </ul>
-</div>
+  ul
+    li
+      spanFollowers/span
+      span1000/span
+    /li
+    li
+      spanViews/span
+      span2000/span
+    /li
+    li
+      spanLikes/span
+      span3000/span
+    /li
+  /ul
+/div
 
 
 
@@ -70,17 +70,17 @@ const userData = {
 };
 
 
-const App = () => {
+const App = () = {
   return (
-    <>
-      <Profile
+    
+      Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      />
-    </>
+      /
+    /
   );
 };
 
@@ -92,17 +92,17 @@ const App = () => {
 
 import userData from "../userData.json";
 
-const App = () => {
+const App = () = {
   return (
-    <>
-      <Profile
+    
+      Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      />
-    </>
+      /
+    /
   );
 };
 
@@ -110,40 +110,40 @@ const App = () => {
 
 Завдання 2 - Список друзів
 
-Необхідно створити компонент <FriendList>, за допомогою якого ми могли б відображати інформацію про друзів користувача.
+Необхідно створити компонент FriendList, за допомогою якого ми могли б відображати інформацію про друзів користувача.
 
 
 
 
 
 
-Компонент <FriendList> повинен приймати один проп friends - масив об'єктів друзів та створювати DOM розмітку наступної структури.
+Компонент FriendList повинен приймати один проп friends - масив об'єктів друзів та створювати DOM розмітку наступної структури.
 
 
 
-<ul>
+ul
 	{/* Кількість li залежить від кількості об'єктів в масиві */}
-	<li>
-		<FriendListItem />
-	</li>
-</ul>
+	li
+		FriendListItem /
+	/li
+/ul
 
 
 
-Компонент <FriendListItem> - це картка одного друга, яка повинна приймати кілька пропсів:
+Компонент FriendListItem - це картка одного друга, яка повинна приймати кілька пропсів:
 
 avatar - посилання на аватар
 name - ім'я друга
 isOnline - буль, що сигналізує про стан друга: в мережі або ні.
-Компонент <FriendListItem> повинен створювати DOM розмітку наступної структури.
+Компонент FriendListItem повинен створювати DOM розмітку наступної структури.
 
 
 
-<div>
-  <img src="" alt="Avatar" width="48" />
-  <p>Friend name</p>
-  <p>Friend status</p>
-</div>
+div
+  img src="" alt="Avatar" width="48" /
+  pFriend name/p
+  pFriend status/p
+/div
 
 
 
@@ -186,11 +186,11 @@ const friends = [
   }
 ];
 
-const App = () => {
+const App = () = {
   return (
-    <>
-      <FriendList friends={friends} />
-    </>
+    
+      FriendList friends={friends} /
+    /
   );
 };
 
@@ -203,18 +203,18 @@ const App = () => {
 import userData from "../userData.json";
 import friends from "../friends.json";
 
-const App = () => {
+const App = () = {
   return (
-    <>
-      <Profile
+    
+      Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      />
-      <FriendList friends={friends} />
-    </>
+      /
+      FriendList friends={friends} /
+    /
   );
 };
 
@@ -235,32 +235,32 @@ id — унікальний ідентифікатор транзакції
 type — тип транзакції
 amount - сума транзакції
 currency - тип валюти
-Необхідно створити компонент <TransactionHistory>, який приймає один проп items - масив об'єктів транзакцій. Компонент створює розмітку таблиці. Кожна транзакція - це рядок таблиці. У прикладі наведена розмітка двох транзакцій.
+Необхідно створити компонент TransactionHistory, який приймає один проп items - масив об'єктів транзакцій. Компонент створює розмітку таблиці. Кожна транзакція - це рядок таблиці. У прикладі наведена розмітка двох транзакцій.
 
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
-    </tr>
-  </thead>
+table
+  thead
+    tr
+      thType/th
+      thAmount/th
+      thCurrency/th
+    /tr
+  /thead
 
-  <tbody>
-    <tr>
-      <td>Invoice</td>
-      <td>125</td>
-      <td>USD</td>
-    </tr>
-    <tr>
-      <td>Withdrawal</td>
-      <td>85</td>
-      <td>USD</td>
-    </tr>
-  </tbody>
-</table>
+  tbody
+    tr
+      tdInvoice/td
+      td125/td
+      tdUSD/td
+    /tr
+    tr
+      tdWithdrawal/td
+      td85/td
+      tdUSD/td
+    /tr
+  /tbody
+/table
 
 
 
@@ -325,11 +325,11 @@ const transactions = [
   }
 ];
 
-const App = () => {
+const App = () = {
   return (
-    <>
-      <TransactionHistory items={transactions} />
-    </>
+    
+      TransactionHistory items={transactions} /
+    /
   );
 };
 
@@ -344,18 +344,18 @@ import friends from "../friends.json";
 import transactions from "../transactions.json";
 
 
-const App = () => {
+const App = () = {
   return (
-    <>
-      <Profile
+    
+      Profile
         name={userData.username}
         tag={userData.tag}
         location={userData.location}
         image={userData.avatar}
         stats={userData.stats}
-      />
-      <FriendList friends={friends} />
-      <TransactionHistory items={transactions} />
-    </>
+      /
+      FriendList friends={friends} /
+      TransactionHistory items={transactions} /
+    /
   );
 };
